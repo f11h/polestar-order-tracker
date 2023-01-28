@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:polestarOrderTracker
+  jpa:
+    hibernate:
+      ddl-auto: create
+  cloud:
+    openfeign:
+      client:
+        config:
+          polestarIam:
+            follow-redirects: false
+  h2:
+    console:
+      enabled: true
+  mail:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    test-connection: true
+
+polestar-order-tracker:
+  mail-config:
+    from: ${spring.mail.username}
+  order-configs: [ ]
+  graph-url: https://pc-api.polestar.com/eu-north-1
+  iam-url: https://polestarid.eu.polestar.com
+  back-off: 300
+  refresh-interval: 21600

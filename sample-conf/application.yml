@@ -1,0 +1,15 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: yourmail@gmail.com
+    password: your-gmail-passowrd
+
+polestar-order-tracker:
+  order-configs:
+    - enabled: true
+      notify-email:
+        - yourmail@gmail.com
+      order-id: 424641db-6692-49a8-aa10-2fe970516404
+      username: yourmail@gmail.com
+      password: YourSuperSecurePolestarPassword
